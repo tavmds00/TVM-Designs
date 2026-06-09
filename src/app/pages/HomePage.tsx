@@ -5,6 +5,9 @@ import { Footer } from "../components/Footer";
 import { ProjectCardGrid } from "../components/ProjectCardGrid";
 import { Button } from "../components/ui/button";
 import { getFeaturedProjects } from "../data/projects";
+import greenIcon from "../../icons/green.svg";
+import pinkIcon from "../../icons/pink.svg";
+import purpleIcon from "../../icons/purple.svg";
 
 export function HomePage() {
   const navigate = useNavigate();
@@ -76,7 +79,7 @@ export function HomePage() {
                   className="flex max-w-[30rem] items-start gap-2 whitespace-normal text-lg italic leading-relaxed mt-6"
                   style={{ color: "#05df72" }}
                 >
-                  <img src="/src/icons/green.svg" className="mt-2 inline h-6 w-6" alt="" />
+                  <img src={greenIcon} className="mt-2 inline h-6 w-6" alt="" />
                   Roadmaps, 0→1 product definition, and prioritization across 7+ enterprise platforms.
                 </span>
               )}
@@ -85,7 +88,7 @@ export function HomePage() {
                   className="flex max-w-[30rem] items-start gap-2 whitespace-normal text-lg italic leading-relaxed mt-6"
                   style={{ color: "#ff00f6" }}
                 >
-                  <img src="/src/icons/pink.svg" className="mt-2 inline h-7 w-7" alt="" />
+                  <img src={pinkIcon} className="mt-2 inline h-7 w-7" alt="" />
                   Scaled design orgs, mentored ICs to seniors, and established cross-functional ways of working.
                 </span>
               )}
@@ -94,7 +97,7 @@ export function HomePage() {
                   className="flex max-w-[30rem] items-start gap-2 whitespace-normal text-lg italic leading-relaxed mt-6"
                   style={{ color: "#a085ff" }}
                 >
-                  <img src="/src/icons/purple.svg" className="mt-2 inline h-7 w-7" alt="" />
+                  <img src={purpleIcon} className="mt-2 inline h-7 w-7" alt="" />
                   $20M risk mitigation, 29% efficiency gains, and products used by 50,000+ people daily.
                 </span>
               )}

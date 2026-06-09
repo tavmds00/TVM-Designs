@@ -91,7 +91,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
   }
 
   return (
-    <Link to={href} className="block h-full">
+    <Link
+      to={href}
+      className="block h-full"
+      onClick={() => window.scrollTo(0, 0)}
+    >
       {card}
     </Link>
   );

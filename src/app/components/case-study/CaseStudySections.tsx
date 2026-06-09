@@ -140,8 +140,13 @@ function StepFlow({ section }: { section: CaseStudyStepFlowSection }) {
                     lineHeight: 1,
                   }}
                 >
-                  {step.number}
+                  {step.number.replace(/\D/g, "") || step.number}
                 </div>
+                {/[a-zA-Z]/.test(step.number) && (
+                  <p className="mb-1 uppercase tracking-widest text-xs" style={{ color: accent, fontWeight: "600" }}>
+                    {step.number.replace(/[0-9]/g, "").trim()}
+                  </p>
+                )}
                 <p className="mb-2" style={{ fontSize: section.titleSize ?? S.heading.fontSize, fontWeight: S.heading.fontWeight, color: S.heading.color }}>
                   {step.title}
                 </p>

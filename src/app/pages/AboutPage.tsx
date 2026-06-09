@@ -1,7 +1,6 @@
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-
-const section1 = "/src/portfolio-pages/about%20/section1.png";
+import section1 from "../../portfolio-pages/about/section1.png";
 
 export function AboutPage() {
   return (
@@ -10,34 +9,23 @@ export function AboutPage() {
 
       <main className="pt-24 pb-12 px-4 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          {/* About Me Section */}
           <section className="mb-16 sm:mb-20 lg:mb-24">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-              {/* Left Column - Text */}
               <div>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8">About Me:</h1>
                 <div className="space-y-4 text-base sm:text-lg text-neutral-300 leading-relaxed">
-                  <p>
-                  12+ years leading design for high-stakes, mission critical products. I've built and mentored design teams, 
-                  defined processes, and shipped under strict operational constraints from military bases to government 
-                  infrastructure. I bridge strategy and execution, aligning cross-functional teams around user needs that matter.
-                  </p>
-                  <p>
-                  Discovery never stops, users always come first, and every decision is backed by data.
-                  </p>
-                  <p>
-                  Based in Austin, Texas.
-                  </p>
+                  <p>12+ years leading design for high-stakes, mission critical products. I've built and mentored design teams, defined processes, and shipped under strict operational constraints from military bases to government infrastructure. I bridge strategy and execution, aligning cross-functional teams around user needs that matter.</p>
+                  <p>Discovery never stops, users always come first, and every decision is backed by data.</p>
+                  <p>Based in Austin, Texas.</p>
                 </div>
               </div>
-                {/* Right Column - Image */}
-                <div>
-                  <div style={{ width: 400 }}>
-                  <img src={section1} alt="Profile" />
-                  </div>
+              <div>
+                <div style={{ width: 400 }}>
+                  <img src={section1} alt="Profile" className="w-full h-auto" />
                 </div>
-                </div>
-                </section>
+              </div>
+            </div>
+          </section>
 
 
 

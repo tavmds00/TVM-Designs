@@ -65,7 +65,7 @@ export const takCaseStudy: CaseStudyContent = {
       quote: "The rules existed.\nNobody had made them usable.",
       quoteColor: accent,
       quoteLClass: "mt-2",
-      quoteRClass: "self-start mt-2",
+      quoteRClass: "self-start mt-18",
       paddingY: "pt-16 pb-16",
       attribution: "",
     },

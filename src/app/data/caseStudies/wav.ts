@@ -91,7 +91,7 @@ export const wavCaseStudy: CaseStudyContent = {
         "WAV was one of my earliest experiences leading product direction across distributed teams, fast moving timelines, and large scale entertainment partnerships.",
         "The project shaped how I think about product ecosystems, organizational alignment, and building digital experiences under real world operational pressure.",
       ],
-      media: { src: section4, alt: "photos of marine waiting", kind: "gif" },
+      media: { src: section4, alt: "photos of marine waiting", kind: "mp4" },
     },
   ],
 };

@@ -130,7 +130,7 @@ export const a11yCaseStudy: CaseStudyContent = {
       type: "richText",
       background: "#00000",
       fontSize: "2.8rem",
-      paddingY: "py-4",
+      paddingY: "py-16",
       segments: [
         { text: "The challenge was never only about compliance.", color: "#ffffff", bold: false },
         { text: "It was about culture, visibility, and organizational alignment.", color: "#ffffff", bold: true, break: true },

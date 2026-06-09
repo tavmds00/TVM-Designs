@@ -98,10 +98,10 @@ aboutParagraphs: [
     {
       id: "krui-section-2",
       type: "split",
-      heading: "I ran a structured discovery across the KRADOS portfolio.",
+      heading: "I interviewed every IC and manager, then had receipts for the Director. ",
       paragraphs: [
-        "Every IC. Every manager. Every discipline. Engineering survey. Team retrospective. Component audit across all nine apps.",
-        "I also ran team health workshops across the organization when I noticed it was more than just a bad design system process.",
+        "I ran a structured discovery across the KRADOS portfolio teams with every IC, every manager, every discipline. Engineering survey. Team retrospective. Component audit across all nine apps.",
+        "I also ran team health workshops across the organization when I noticed it was more than just the bad design system process.",
         "The goal was to find design problems.",
         { text: "The outcome showed organizational ones.", bold: true },
       ],
@@ -231,7 +231,7 @@ aboutParagraphs: [
       id: "krui-section-12",
       type: "quote",
       quoteLClass: "mt-2",
-      quoteRClass: "self-start mt-20",
+      quoteRClass: "self-start mt-18",
       paddingY: "pt-12 pb-12",       
       quoteColor: '#00B4D8',
       quote: "It would be helpful if we had a way to see the \n decisions and research behind the guidance.",

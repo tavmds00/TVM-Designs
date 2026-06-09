@@ -21,7 +21,12 @@ function ts(style?: TextStyle, defaults?: { fontSize?: string; color?: string; f
   };
 }
 
-function FullBleedMedia({ src, alt, constrained }: { src: string; alt: string; constrained?: boolean }) {
+function FullBleedMedia({ src, alt, kind, constrained }: { src: string; alt: string; kind: string; constrained?: boolean }) {
+  if (kind === "mp4") {
+    return (
+      <video src={src} autoPlay loop muted playsInline className="block h-auto w-full object-contain" />
+    );
+  }
   if (constrained) {
     return (
       <div className="w-full flex justify-center items-center overflow-hidden" style={{ maxHeight: "70vh" }}>
@@ -251,6 +256,7 @@ export function CaseStudySections({ sections }: CaseStudySectionsProps) {
                 <FullBleedMedia
                   src={section.media.src}
                   alt={section.media.alt}
+                  kind={section.media.kind}
                   constrained={section.id === "tak-section-4"}
                 />
               </section>

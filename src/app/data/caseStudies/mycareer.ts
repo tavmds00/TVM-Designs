@@ -10,8 +10,9 @@ import section5Image from "../../../portfolio-pages/mycareer/section5.png";
 import section6Phone from "../../../portfolio-pages/mycareer/section6-phone.png";
 import section6Photo from "../../../portfolio-pages/mycareer/section6-photo.png";
 import section7Cover from "../../../portfolio-pages/mycareer/section7cover.png";
-import section7Video from "../../../portfolio-pages/mycareer/section7.mov";
+import section7Video from "../../../portfolio-pages/mycareer/section7.mp4";
 import section8Image from "../../../portfolio-pages/mycareer/section8.png";
+
 
 /** MyCareer case study — Figma node 3768:5211 */
 export const mycareerCaseStudy: CaseStudyContent = {

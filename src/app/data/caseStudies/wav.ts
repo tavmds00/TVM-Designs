@@ -4,7 +4,7 @@ import hero2 from "../../../portfolio-pages/wav/hero2.png";
 import section1 from "../../../portfolio-pages/wav/section1.png";
 import section2 from "../../../portfolio-pages/wav/section2.png";
 import section3 from "../../../portfolio-pages/wav/section3.png";
-import section4 from "../../../portfolio-pages/wav/section4.gif";
+import section4 from "../../../portfolio-pages/wav/section4.mp4";
 
 export const wavCaseStudy: CaseStudyContent = {
   slug: "wav",

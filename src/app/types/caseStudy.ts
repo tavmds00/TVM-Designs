@@ -34,7 +34,7 @@ export type CaseStudySectionBase = {
 
 export type CaseStudyFullBleedSection = CaseStudySectionBase & {
   type: "fullBleed";
-  media: { src: string; alt: string; kind: "image" | "gif" };
+  media: { src: string; alt: string; kind: "image" | "gif" | "mp4" };
 };
 
 export type CaseStudySplitSection = CaseStudySectionBase & {
@@ -49,7 +49,7 @@ export type CaseStudySplitSection = CaseStudySectionBase & {
   cta?: { label: string; href?: string; scrollTo?: string; color?: string };
   /** Multiple CTAs — renders as a flex row of buttons */
   ctas?: { label: string; href?: string; scrollTo?: string; color?: string }[];
-  media: { src: string; alt: string; kind: "image" | "gif" };
+  media: { src: string; alt: string; kind: "image" | "gif" | "mp4" };
   mediaSide?: "left" | "right";
   audio?: { src: string; label?: string; sublabel?: string; accentColor?: string };
   videoRight?: { src: string; alt: string };

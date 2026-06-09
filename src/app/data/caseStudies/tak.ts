@@ -1,7 +1,7 @@
 import type { CaseStudyContent } from "../../types/caseStudy";
-import section1 from "../../../portfolio-pages/tak/section1.gif";
-import section2 from "../../../portfolio-pages/tak/section2.gif";
-import section3 from "../../../portfolio-pages/tak/Section 3.gif";
+import section1 from "../../../portfolio-pages/tak/section1.mp4";
+import section2 from "../../../portfolio-pages/tak/section2.mp4";
+import section3 from "../../../portfolio-pages/tak/section3.mp4";
 import section4 from "../../../portfolio-pages/tak/section4.png";
 import section5 from "../../../portfolio-pages/tak/section5.png";
 import takLogo from "../../../portfolio-pages/tak/TAK Logo.svg";
@@ -38,7 +38,7 @@ export const takCaseStudy: CaseStudyContent = {
     {
       id: "tak-section-1",
       type: "fullBleed",
-      media: { src: section1, alt: "TAK design system overview", kind: "gif" },
+      media: { src: section1, alt: "TAK design system overview", kind: "mp4" },
     },
 
     // Split – standards existed, infrastructure didn't
@@ -54,7 +54,7 @@ export const takCaseStudy: CaseStudyContent = {
         { text: "The ecosystem wasn't missing guidance. It was missing shared infrastructure.", bold: true },
       ],
       paragraphStyle: { color: "#d4d4d8" },
-      media: { src: section2, alt: "TAK component library exploration", kind: "gif" },
+      media: { src: section2, alt: "TAK component library exploration", kind: "mp4" },
       mediaSide: "right",
     },
 
@@ -116,7 +116,7 @@ export const takCaseStudy: CaseStudyContent = {
     {
       id: "tak-section-4",
       type: "fullBleed",
-      media: { src: section3, alt: "TAK system in use", kind: "gif" },
+      media: { src: section3, alt: "TAK system in use", kind: "mp4" },
     },
 
     // stepFlow – adoption

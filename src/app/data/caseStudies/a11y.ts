@@ -2,7 +2,6 @@ import type { CaseStudyContent } from "../../types/caseStudy";
 import section1 from "../../../portfolio-pages/a11y/section1.png";
 import section2 from "../../../portfolio-pages/a11y/section2.png";
 import section3 from "../../../portfolio-pages/a11y/section3.png";
-import section3slack from "../../../portfolio-pages/a11y/section3slack.png";
 import section4 from "../../../portfolio-pages/a11y/section4.png";
 import audio1 from "../../../portfolio-pages/a11y/oliver-audio.m4a";
 

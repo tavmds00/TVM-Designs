@@ -1,6 +1,6 @@
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import section1 from "../../portfolio-pages/about/section1.png";
+import section1 from "../../../portfolio-pages/about/section1.png";
 
 export function AboutPage() {
   return (

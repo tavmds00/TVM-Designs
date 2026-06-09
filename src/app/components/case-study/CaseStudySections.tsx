@@ -127,26 +127,9 @@ function StepFlow({ section }: { section: CaseStudyStepFlowSection }) {
           return (
             <>
               <div key={step.number} className="flex-1 rounded-2xl bg-[#1a1a1a] p-9 min-h-[220px] min-w-0">
-                <div
-                  className="mb-4 flex items-center justify-center rounded-full shrink-0"
-                  style={{
-                    width: "3rem",
-                    height: "3rem",
-                    minWidth: "3rem",
-                    backgroundColor: "#0d2e1a",
-                    color: accent,
-                    fontSize: section.numberSize ?? "1.2rem",
-                    fontWeight: "700",
-                    lineHeight: 1,
-                  }}
-                >
-                  {step.number.replace(/\D/g, "") || step.number}
-                </div>
-                {/[a-zA-Z]/.test(step.number) && (
-                  <p className="mb-1 uppercase tracking-widest text-xs" style={{ color: accent, fontWeight: "600" }}>
-                    {step.number.replace(/[0-9]/g, "").trim()}
-                  </p>
-                )}
+                <p className="mb-3 uppercase tracking-widest" style={{ color: accent, fontSize: section.numberSize ?? S.body.fontSize, fontWeight: "600" }}>
+                  {step.number}
+                </p>
                 <p className="mb-2" style={{ fontSize: section.titleSize ?? S.heading.fontSize, fontWeight: S.heading.fontWeight, color: S.heading.color }}>
                   {step.title}
                 </p>

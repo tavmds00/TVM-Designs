@@ -67,7 +67,7 @@ export const takCaseStudy: CaseStudyContent = {
       quoteLClass: "mt-2",
       quoteRClass: "self-start mt-18",
       paddingY: "pt-16 pb-16",
-      attribution: "",
+      attribution: "Army Software Factory, Product Designer",
     },
 
     // textBlock – ecosystem mapping

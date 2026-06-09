@@ -89,7 +89,6 @@ export const a11yCaseStudy: CaseStudyContent = {
         accentColor: "#C584FF",
       },
     },
-    
     {
       id: "a11y-section-5",
       type: "richText",
@@ -100,17 +99,23 @@ export const a11yCaseStudy: CaseStudyContent = {
     },
     {
       id: "a11y-section-6",
-      type: "split",
+      type: "resultCards",
       heading: "Beyond VMware.",
       headingStyle: { size: "2.5rem", color: "#ffffff", weight: "700" },
-      paragraphs: [
-        "Why Accessible Product Design Makes Business Sense",
-        "Following collaborative accessibility training initiatives across VMware, I was invited to participate in UCLA's 2024 AmeriTech panel discussion on Why Accessible Product Design Makes Business Sense.",
-        "What began as internal advocacy expanded into broader conversations around inclusive systems, organizational responsibility, and design leadership.",
+      accentColor: "#C584FF",
+      image: section4,
+      imageAlt: "Beyond VMware panel",
+      arrowSize: 20,
+      categoryStyle: { size: "1.1rem", color: "#ffffff", weight: "600" },
+      metricStyle: { size: "1rem", color: "#d4d4d8", weight: "400" },
+      descriptionStyle: { size: "1rem", color: "#d4d4d8", weight: "400" },
+      cards: [
+        {
+          category: "Why Accessible Product Design Makes Business Sense",
+          metric: "Following collaborative accessibility training initiatives across VMware, I was invited to participate in UCLA's 2024 AmeriTech panel discussion on Why Accessible Product Design Makes Business Sense.",
+          description: "What began as internal advocacy expanded into broader conversations around inclusive systems, organizational responsibility, and design leadership.",
+        },
       ],
-      paragraphStyle: { color: "#d4d4d8" },
-      cta: { label: "View Event", href: "https://www.anderson.ucla.edu/news-and-events/why-accessible-product-design-makes-business-sense", color: "#C584FF" },
-      media: { src: section4, alt: "Beyond VMware panel", kind: "image" },
     },
     {
       id: "a11y-section-7",
@@ -127,14 +132,13 @@ export const a11yCaseStudy: CaseStudyContent = {
     {
       id: "a11y-section-8",
       type: "richText",
-      background: "#00000",
-      fontSize: "2.8rem",
+      background: "#000000",
+      fontSize: "2rem",
       paddingY: "py-16",
       segments: [
         { text: "The challenge was never only about compliance.", color: "#ffffff", bold: false },
-        { text: "It was about culture, visibility, and organizational alignment.", color: "#ffffff", bold: true, break: true },
+        { text: " It was about culture, visibility, and organizational alignment.", color: "#ffffff", bold: true },
       ],
     },
   ],
 };
-

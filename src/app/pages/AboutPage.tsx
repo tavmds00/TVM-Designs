@@ -1,6 +1,6 @@
+
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import section1 from "../../../portfolio-pages/about/section1.png";
 
 export function AboutPage() {
   return (
@@ -20,14 +20,10 @@ export function AboutPage() {
                 </div>
               </div>
               <div>
-                <div style={{ width: 400 }}>
-                  <img src={section1} alt="Profile" className="w-full h-auto" />
-                </div>
+                <img src="/portfolio-pages/about/section1.png" alt="Profile" className="w-full h-auto max-w-[400px]" />
               </div>
             </div>
           </section>
-
-
 
           {/* Recent Experience Section */}
           <section>

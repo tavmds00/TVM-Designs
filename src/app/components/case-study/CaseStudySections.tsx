@@ -128,14 +128,16 @@ function StepFlow({ section }: { section: CaseStudyStepFlowSection }) {
             <>
               <div key={step.number} className="flex-1 rounded-2xl bg-[#1a1a1a] p-9 min-h-[220px] min-w-0">
                 <div
-                  className="mb-4 flex items-center justify-center rounded-full"
+                  className="mb-4 flex items-center justify-center rounded-full shrink-0"
                   style={{
                     width: "3rem",
                     height: "3rem",
+                    minWidth: "3rem",
                     backgroundColor: "#0d2e1a",
                     color: accent,
                     fontSize: section.numberSize ?? "1.2rem",
                     fontWeight: "700",
+                    lineHeight: 1,
                   }}
                 >
                   {step.number}
@@ -319,6 +321,8 @@ export function CaseStudySections({ sections }: CaseStudySectionsProps) {
                   <div className={`${section.mediaSide === "left" ? "order-first" : "order-2"} overflow-hidden`}>
                     {section.videoRight ? (
                       <video src={section.videoRight.src} autoPlay loop muted playsInline className="block h-full w-full object-contain" />
+                    ) : section.media.kind === "mp4" ? (
+                      <video src={section.media.src} autoPlay loop muted playsInline className="block h-full w-full object-contain" />
                     ) : (
                       <img src={section.media.src} alt={section.media.alt} className={`block h-full w-full object-contain ${section.id === "wav-section-4" ? "scale-[.8] origin-center" : ""}`} loading="lazy" />
                     )}

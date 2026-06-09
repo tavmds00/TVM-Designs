@@ -8,7 +8,7 @@ import section4 from "../../../portfolio-pages/wav/section4.mp4";
 
 export const wavCaseStudy: CaseStudyContent = {
   slug: "wav",
-  scrollTitle: "WAV Media",
+  scrollTitle: "WAV",
   scrollTitleColor: "#02FEF6",
   hero: {
     subtitle: "WAV Media x NAVER",

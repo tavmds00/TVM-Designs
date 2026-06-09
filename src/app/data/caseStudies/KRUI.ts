@@ -98,15 +98,15 @@ aboutParagraphs: [
     {
       id: "krui-section-2",
       type: "split",
-      heading: "I interviewed every IC and manager, then had receipts for the Director.",
+      heading: "I ran a structured discovery across the KRADOS portfolio.",
       paragraphs: [
-        "From a single pilot at Camp Pendleton with 254 attendees and two live fixes shipped mid-event, to Camp Lejeune, Fort Sill, MCAS Yuma, MCAS Miramar, and overseas. Five locations across the country in under six months. Then leadership made it mandatory nationwide.",
-        "The first East Coast event at Camp Lejeune end with...",
-        "Then the server went down. Demand was so high the system couldn't keep up. Everyone fell back to pen and paper to finish the day. Even with the outage the data held.",
+        "Every IC. Every manager. Every discipline. Engineering survey. Team retrospective. Component audit across all nine apps.",
+        "I also ran team health workshops across the organization when I noticed it was more than just a bad design system process.",
+        "The goal was to find design problems.",
+        { text: "The outcome showed organizational ones.", bold: true },
       ],
       media: { src: section2, alt: "KRUI retro", kind: "image" },
     },
-
     {
       id: "krui-section-3",
       type: "statsGrid",

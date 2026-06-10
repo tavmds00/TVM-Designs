@@ -48,6 +48,23 @@ export const wavCaseStudy: CaseStudyContent = {
     },
     {
       id: "wav-section-2",
+      type: "textBlock",
+      heading: "Building under pressure.",
+      paragraphs: [
+        "WAV required translating NAVER's live streaming ecosystem into a new experience tailored for western music audiences while simultaneously building a new brand, product language, and content strategy from the ground up.",
+        "I led:",
+        [{ kind: "bullets", color: "#02FEF6", items: [
+          "Product and UX direction",
+          "Branding and visual identity",
+          "Cross functional collaboration",
+          "Overseas development coordination",
+          "QA and release cadence across iOS and Android",
+        ]}],
+      ],
+      paragraphStyle: { color: "#d4d4d8" },
+    },
+    {
+      id: "wav-section-2b",
       type: "fullBleed",
       media: { src: section2, alt: "WAV Media building under pressure", kind: "image" },
     },

@@ -312,7 +312,7 @@ export function CaseStudySections({ sections }: CaseStudySectionsProps) {
                     ) : section.media.kind === "mp4" ? (
                       <video src={section.media.src} autoPlay loop muted playsInline className="block h-full w-full object-contain" />
                     ) : (
-                      <img src={section.media.src} alt={section.media.alt} className={`block h-full w-full object-contain ${section.id === "wav-section-4" ? "scale-[.6] origin-center" : ""}`} loading="lazy" />
+                      <img src={section.media.src} alt={section.media.alt} className={`block h-full w-full object-contain ${section.id === "wav-section-4" ? "scale-[.8] origin-center" : ""}`} loading="lazy" />
                     )}
                   </div>
                 </div>
@@ -381,7 +381,7 @@ export function CaseStudySections({ sections }: CaseStudySectionsProps) {
           case "textBlock": {
             const bulletDotColor = section.bulletColor ?? "#ffffff";
             return (
-              <section key={section.id} id={section.id} className="w-full px-8 sm:px-12 lg:px-16 py-16 sm:py-20 lg:py-24 pb-8">
+              <section key={section.id} id={section.id} className="w-full px-8 sm:px-12 lg:px-16 pt-16 sm:pt-20 lg:pt-24 pb-8">
                 <div className="max-w-[90rem]">
                   <h2 className="mb-6 leading-[1.15] tracking-[-0.02em]" style={ts(section.headingStyle, S.heading)}>
                     {section.heading}
@@ -457,7 +457,7 @@ export function CaseStudySections({ sections }: CaseStudySectionsProps) {
                     <p className="whitespace-pre-line italic" style={ts(section.quoteStyle, { fontSize: "2.4rem", color: "#ffffff", fontWeight: "300" })}>
                       {section.quote}
                     </p>
-                    <svg width="44" height="36" viewBox="0 0 44 36" fill="none" xmlns="http://www.w3.org/2000/svg" className={`shrink-0 w-8 self-end mb-2 ${section.quoteRClass ?? ""}`}>
+                    <svg width="44" height="36" viewBox="0 0 44 36" fill="none" xmlns="http://www.w3.org/2000/svg" className={`shrink-0 w-8 self-end mb-2 ${section.quoteRClass ?? ""}`} style={{ marginLeft: "0.5rem", display: "inline-block", verticalAlign: "bottom" }}>
                       <path opacity={0.5} d="M31.1041 35.1367C38.4481 29.9527 43.6321 21.4567 43.6321 12.0967C43.6321 4.46472 39.0241 0.00071676 33.6961 0.000716294C28.6561 0.000715854 24.9121 4.03271 24.9121 8.78471C24.9121 13.5367 28.2241 16.9927 32.5441 16.9927C33.4081 16.9927 34.5601 16.8487 34.8481 16.7047C34.1281 21.6007 29.5201 27.3607 24.9121 30.2407L31.1041 35.1367ZM6.33608 35.1367C13.5361 29.9527 18.7201 21.4567 18.7201 12.0967C18.7201 4.46471 14.1121 0.000714582 8.78408 0.000714117C3.88808 0.000713689 8.28278e-05 4.03271 8.24124e-05 8.78471C8.1997e-05 13.5367 3.45608 16.9927 7.77608 16.9927C8.64008 16.9927 9.64808 16.8487 9.93608 16.7047C9.21608 21.6007 4.75208 27.3607 0.144082 30.2407L6.33608 35.1367Z" fill={section.quoteColor ?? "#ffffff"} />
                     </svg>
                   </div>

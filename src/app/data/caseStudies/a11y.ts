@@ -106,7 +106,7 @@ export const a11yCaseStudy: CaseStudyContent = {
       image: section4,
       imageAlt: "Beyond VMware panel",
       arrowSize: 60,
-      categoryStyle: { size: "2rem", color: "#ffffff", weight: "600" },
+      categoryStyle: { size: "1.8rem", color: "#ffffff", weight: "600" },
       metricStyle: { size: "1.3rem", color: "#d4d4d8", weight: "400" },
       descriptionStyle: { size: "1.3rem", color: "#d4d4d8", weight: "400" },
       cards: [

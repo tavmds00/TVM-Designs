@@ -312,7 +312,7 @@ export function CaseStudySections({ sections }: CaseStudySectionsProps) {
                     ) : section.media.kind === "mp4" ? (
                       <video src={section.media.src} autoPlay loop muted playsInline className="block h-full w-full object-contain" />
                     ) : (
-                      <img src={section.media.src} alt={section.media.alt} className={`block h-full w-full object-contain ${section.id === "wav-section-4" ? "scale-[.8] origin-center" : ""}`} loading="lazy" />
+                      <img src={section.media.src} alt={section.media.alt} className={`block h-full w-full object-contain ${section.id === "wav-section-4" ? "scale-[.6] origin-center" : ""}`} loading="lazy" />
                     )}
                   </div>
                 </div>
@@ -381,7 +381,7 @@ export function CaseStudySections({ sections }: CaseStudySectionsProps) {
           case "textBlock": {
             const bulletDotColor = section.bulletColor ?? "#ffffff";
             return (
-              <section key={section.id} id={section.id} className="w-full px-8 sm:px-12 lg:px-16 py-16 sm:py-20 lg:py-28">
+              <section key={section.id} id={section.id} className="w-full px-8 sm:px-12 lg:px-16 py-16 sm:py-20 lg:py-24 pb-8">
                 <div className="max-w-[90rem]">
                   <h2 className="mb-6 leading-[1.15] tracking-[-0.02em]" style={ts(section.headingStyle, S.heading)}>
                     {section.heading}

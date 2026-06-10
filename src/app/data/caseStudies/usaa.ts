@@ -210,7 +210,7 @@ export const usaaCaseStudy: CaseStudyContent = {
     {
       id: "usaa-section-12",
       type: "split",
-      heading: "The system finally matched reality.",
+      heading: "The system finally \n matched reality.",
       headingStyle: { size: "3rem", color: "#FAC705", weight: "700" },
       paragraphs: [
         "The redesign launched across seven USAA campuses supporting more than 250,000 annual visitors.",

@@ -75,7 +75,7 @@ export function A11yPage() {
                 <h3 className="mb-1 uppercase tracking-[0.12em]" style={S.metaLabel}>
                   {item.label}
                 </h3>
-                <p style={S.metaValue}>{item.value}</p>
+                <p className="whitespace-pre-line" style={S.metaValue}>{item.value}</p>
               </div>
             ))}
           </div>

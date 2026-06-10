@@ -48,25 +48,8 @@ export const wavCaseStudy: CaseStudyContent = {
     },
     {
       id: "wav-section-2",
-      type: "split",
-      heading: "Building under pressure.",
-      paragraphs: [
-        {
-          text: "WAV required translating NAVER's live streaming ecosystem into a new experience tailored for western music audiences while simultaneously building a new brand, product language, and content strategy from the ground up.",
-          bold: false,
-        },
-        { text: "I led:", bold: false },
-      ],
-      bullets: [
-        "Product and UX direction",
-        "Branding and visual identity",
-        "Cross functional collaboration",
-        "Overseas development coordination",
-        "QA and release cadence across iOS and Android",
-      ],
-      bulletStyle: { color: "#02FEF6" },
+      type: "fullBleed",
       media: { src: section2, alt: "WAV Media building under pressure", kind: "image" },
-      mediaSide: "right",
     },
     {
       id: "wav-section-3",
@@ -91,8 +74,7 @@ export const wavCaseStudy: CaseStudyContent = {
         "WAV was one of my earliest experiences leading product direction across distributed teams, fast moving timelines, and large scale entertainment partnerships.",
         "The project shaped how I think about product ecosystems, organizational alignment, and building digital experiences under real world operational pressure.",
       ],
-      media: { src: section4, alt: "photos of marine waiting", kind: "mp4" },
+      media: { src: section4, alt: "WAV early lessons", kind: "mp4" },
     },
   ],
 };
-

@@ -94,7 +94,7 @@ export const a11yCaseStudy: CaseStudyContent = {
       type: "richText",
       background: "#0a0a0a",
       fontSize: "4rem",
-      paddingY: "py-16",
+      paddingY: "pb-16 pt-4",
       segments: [{ text: "RECOGNIZED LEADERSHIP", color: "#C584FF", bold: true }],
     },
     {
@@ -106,8 +106,8 @@ export const a11yCaseStudy: CaseStudyContent = {
       image: section4,
       imageAlt: "Beyond VMware panel",
       arrowSize: 20,
-      categoryStyle: { size: "1.5rem", color: "#ffffff", weight: "600" },
-      metricStyle: { size: "1.3rem", color: "#d4d4d8", weight: "400" },
+      categoryStyle: { size: "2rem", color: "#ffffff", weight: "600" },
+      metricStyle: { size: "2rem", color: "#d4d4d8", weight: "400" },
       descriptionStyle: { size: "1.3rem", color: "#d4d4d8", weight: "400" },
       cards: [
         {

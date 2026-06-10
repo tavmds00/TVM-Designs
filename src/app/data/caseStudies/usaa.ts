@@ -146,16 +146,16 @@ export const usaaCaseStudy: CaseStudyContent = {
 
     // ── 7. Quote ──────────────────────────────────────────────────────────
    
-      {
-        id: "usaa-section-7",
-        type: "quote",
-        quoteLClass: "mt-2",
-        quoteRClass: "self-start mt-16",
-        paddingY: "pt-16 pb-16",
-        quoteColor: "#FAC705",
-        quote: "I am so grateful for this new implementation. I never understood how someone could request a visitor under my name without my consent.",
-        attribution: "USAA employee, post-launch feedback",
-      },
+    {
+      id: "usaa-section-7",
+      type: "quote",
+      quoteLClass: "mt-2",
+      quoteRClass: "self-start mt-24",
+      paddingY: "pt-16 pb-16",
+      quoteColor: "#FAC705",
+      quote: "I am so grateful for this new implementation. I never understood how someone could request a visitor under my name without my consent.",
+      attribution: "USAA employee, post-launch feedback",
+    },
     // ── 8. Split — Security inherited the mess ───────────────────────────
     {
       id: "usaa-section-8",

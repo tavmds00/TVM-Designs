@@ -222,7 +222,7 @@ function ResultCards({ section }: { section: CaseStudyResultCardsSection }) {
               <span style={ts(section.categoryStyle, { fontSize: "0.75rem", color: "#a3a3a3", fontWeight: "600" })}>{card.category}</span>
             </div>
             <p className="mb-1" style={ts(section.metricStyle, { fontSize: "1.25rem", color: "#ffffff", fontWeight: "700" })}>{card.metric}</p>
-            <p style={ts(section.descriptionStyle, S.body)}>{card.description}</p>
+            <p className="mt-4" style={ts(section.descriptionStyle, S.body)}>{card.description}</p>
           </div>
         ))}
       </div>
@@ -321,7 +321,7 @@ export function CaseStudySections({ sections }: CaseStudySectionsProps) {
                 </section>
               );
             }
-            
+
           case "dualImage":
             return (
               <section key={section.id} id={section.id} className="w-full">

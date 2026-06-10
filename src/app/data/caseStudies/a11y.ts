@@ -112,7 +112,7 @@ export const a11yCaseStudy: CaseStudyContent = {
       cards: [
         {
           category: "Why Accessible Product Design Makes Business Sense",
-          metric: "Following collaborative accessibility training initiatives across VMware, I was invited to participate in UCLA's 2024 AmeriTech panel discussion on Why Accessible Product Design Makes Business Sense.",
+          metric: "Following collaborative accessibility training initiatives across VMware, I was invited to participate in UCLA's 2024 AmeriTech panel discussion on Why Accessible Product Design Makes Business Sense.\n\n",
           description: "What began as internal advocacy expanded into broader conversations around inclusive systems, organizational responsibility, and design leadership.",
         },
       ],

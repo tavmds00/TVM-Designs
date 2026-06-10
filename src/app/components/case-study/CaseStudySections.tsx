@@ -252,74 +252,76 @@ export function CaseStudySections({ sections }: CaseStudySectionsProps) {
               </section>
             );
 
-          case "split": {
-            const bulletDotColor = section.bulletStyle?.color ?? "#ffffff";
-            const allCtas = section.ctas ?? (section.cta ? [section.cta] : []);
-            return (
-              <section key={section.id} id={section.id} className="w-full">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                  <div className={`${section.mediaSide === "left" ? "order-2" : "order-first"} flex items-center px-8 sm:px-12 lg:px-16 py-10 lg:py-16`}>
-                    <div className="space-y-6">
-                      <h2 className="leading-[1.15] tracking-[-0.02em]" style={ts(section.headingStyle, S.heading)}>
-                        {section.heading}
-                      </h2>
-                      <div className="space-y-4">
-                        {section.paragraphs.map((p, idx) => {
-                          const text = typeof p === "string" ? p : p.text;
-                          const bold = typeof p === "object" && p.bold;
-                          return (
-                            <p key={idx} className="whitespace-pre-line" style={bold ? S.aboutBold : ts(section.paragraphStyle, S.body)}>
-                              {text}
-                            </p>
-                          );
-                        })}
-                        {section.bullets && (
-                          <ul className="space-y-3">
-                            {section.bullets.map((b, bi) => {
-                              const text = typeof b === "string" ? b : b.text;
-                              const bold = typeof b === "object" && b.bold;
-                              return (
-                                <li key={bi} className="flex gap-2">
-                                  <span className="mt-1 text-xl shrink-0" style={{ color: bulletDotColor }}>•</span>
-                                  <span style={bold ? S.aboutBold : S.bullet}>{text}</span>
-                                </li>
-                              );
-                            })}
-                          </ul>
+            case "split": {
+              const bulletDotColor = section.bulletStyle?.color ?? "#ffffff";
+              const allCtas = section.ctas ?? (section.cta ? [section.cta] : []);
+              return (
+                <section key={section.id} id={section.id} className="w-full">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                    <div className={`${section.mediaSide === "left" ? "order-2" : "order-first"} flex items-center px-8 sm:px-12 lg:px-16 py-10 lg:py-16`}>
+                      <div className="space-y-6">
+                        <h2 className="leading-[1.15] tracking-[-0.02em]" style={ts(section.headingStyle, S.heading)}>
+                          {section.heading}
+                        </h2>
+                        <div className="space-y-4">
+                          {section.paragraphs.map((p, idx) => {
+                            const text = typeof p === "string" ? p : p.text;
+                            const bold = typeof p === "object" && p.bold;
+                            return (
+                              <p key={idx} className="whitespace-pre-line" style={bold ? S.aboutBold : ts(section.paragraphStyle, S.body)}>
+                                {text}
+                              </p>
+                            );
+                          })}
+                          {section.bullets && (
+                            <ul className="space-y-3">
+                              {section.bullets.map((b, bi) => {
+                                const text = typeof b === "string" ? b : b.text;
+                                const bold = typeof b === "object" && b.bold;
+                                return (
+                                  <li key={bi} className="flex gap-2">
+                                    <span className="mt-1 text-xl shrink-0" style={{ color: bulletDotColor }}>•</span>
+                                    <span style={bold ? S.aboutBold : S.bullet}>{text}</span>
+                                  </li>
+                                );
+                              })}
+                            </ul>
+                          )}
+                        </div>
+                        {allCtas.length > 0 && (
+                          <div className="flex flex-wrap gap-3">
+                            {allCtas.map((cta) => (
+                              <CtaButton key={cta.label} {...cta} />
+                            ))}
+                          </div>
+                        )}
+                        {section.audio && (
+                          <div className="pt-4">
+                            {section.audio.label && <p style={{ ...S.body, fontWeight: "600", color: "#ffffff" }} className="mb-1">{section.audio.label}</p>}
+                            {section.audio.sublabel && <p style={{ ...S.body, color: "#a3a3a3" }} className="mb-3">{section.audio.sublabel}</p>}
+                            <audio controls className="w-full" style={{ accentColor: section.audio.accentColor ?? "#C584FF" }}>
+                              <source src={section.audio.src} type="audio/mp4" />
+                            </audio>
+                          </div>
                         )}
                       </div>
-                      {allCtas.length > 0 && (
-                        <div className="flex flex-wrap gap-3">
-                          {allCtas.map((cta) => (
-                            <CtaButton key={cta.label} {...cta} />
-                          ))}
+                    </div>
+                    <div className={`${section.mediaSide === "left" ? "order-first" : "order-2"} overflow-hidden`}>
+                      {section.videoRight ? (
+                        <video src={section.videoRight.src} autoPlay loop muted playsInline className="block h-full w-full object-contain" />
+                      ) : section.media.kind === "mp4" ? (
+                        <div className={section.id === "wav-section-4" ? "flex items-center justify-center h-full w-full p-16" : "h-full w-full"}>
+                          <video src={section.media.src} autoPlay loop muted playsInline className="block w-full h-auto object-contain" />
                         </div>
-                      )}
-                      {section.audio && (
-                        <div className="pt-4">
-                          {section.audio.label && <p style={{ ...S.body, fontWeight: "600", color: "#ffffff" }} className="mb-1">{section.audio.label}</p>}
-                          {section.audio.sublabel && <p style={{ ...S.body, color: "#a3a3a3" }} className="mb-3">{section.audio.sublabel}</p>}
-                          <audio controls className="w-full" style={{ accentColor: section.audio.accentColor ?? "#C584FF" }}>
-                            <source src={section.audio.src} type="audio/mp4" />
-                          </audio>
-                        </div>
+                      ) : (
+                        <img src={section.media.src} alt={section.media.alt} className={`block h-full w-full object-contain ${section.id === "wav-section-4" ? "scale-[.8] origin-center" : ""}`} loading="lazy" />
                       )}
                     </div>
                   </div>
-                  <div className={`${section.mediaSide === "left" ? "order-first" : "order-2"} overflow-hidden`}>
-                    {section.videoRight ? (
-                      <video src={section.videoRight.src} autoPlay loop muted playsInline className="block h-full w-full object-contain" />
-                    ) : section.media.kind === "mp4" ? (
-                      <video src={section.media.src} autoPlay loop muted playsInline className="block h-full w-full object-contain" />
-                    ) : (
-                      <img src={section.media.src} alt={section.media.alt} className={`block h-full w-full object-contain ${section.id === "wav-section-4" ? "scale-[.6] origin-center" : ""}`} loading="lazy" />
-                    )}
-                  </div>
-                </div>
-              </section>
-            );
-          }
-
+                </section>
+              );
+            }
+            
           case "dualImage":
             return (
               <section key={section.id} id={section.id} className="w-full">

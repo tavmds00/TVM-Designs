@@ -105,10 +105,10 @@ export const a11yCaseStudy: CaseStudyContent = {
       accentColor: "#C584FF",
       image: section4,
       imageAlt: "Beyond VMware panel",
-      arrowSize: 60,
-      categoryStyle: { size: "1.8rem", color: "#ffffff", weight: "600" },
-      metricStyle: { size: "1.3rem", color: "#d4d4d8", weight: "400" },
-      descriptionStyle: { size: "1.3rem", color: "#d4d4d8", weight: "400" },
+      arrowSize: 20,
+      categoryStyle: { size: "1.1rem", color: "#ffffff", weight: "600" },
+      metricStyle: { size: "1rem", color: "#d4d4d8", weight: "400" },
+      descriptionStyle: { size: "1rem", color: "#d4d4d8", weight: "400" },
       cards: [
         {
           category: "Why Accessible Product Design Makes Business Sense",
@@ -137,7 +137,7 @@ export const a11yCaseStudy: CaseStudyContent = {
       paddingY: "py-16",
       segments: [
         { text: "The challenge was never only about compliance.", color: "#ffffff", bold: false },
-        { text: " It was about culture, visibility, and organizational alignment.", color: "#ffffff", bold: true },
+        { text: "It was about culture, visibility, and organizational alignment.", color: "#ffffff", bold: true, break: true },
       ],
     },
   ],

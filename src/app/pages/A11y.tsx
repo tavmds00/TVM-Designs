@@ -4,6 +4,7 @@ import { CaseStudyBackLink } from "../components/case-study/CaseStudyBackLink";
 import { CaseStudySections } from "../components/case-study/CaseStudySections";
 import { a11yCaseStudy } from "../data/caseStudies/a11y";
 import { S } from "../styles/tokens";
+import { ScrollToTopButton } from "../components/ScrollToTopButton";
 
 export function A11yPage() {
   const { hero, sections } = a11yCaseStudy;
@@ -105,12 +106,12 @@ export function A11yPage() {
                   <button
                     key={cta.label}
                     onClick={() => {
-  const el = document.getElementById(cta.scrollTo!);
-  if (el) {
-    const top = el.getBoundingClientRect().top + window.scrollY - 96;
-    window.scrollTo({ top, behavior: "smooth" });
-  }
-}}
+                      const el = document.getElementById(cta.scrollTo!);
+                      if (el) {
+                        const top = el.getBoundingClientRect().top + window.scrollY - 96;
+                        window.scrollTo({ top, behavior: "smooth" });
+                      }
+                    }}
                     className="rounded-full border px-6 py-2 transition-colors"
                     style={ctaStyle}
                     onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = ctaColor; e.currentTarget.style.color = "#000"; }}
@@ -128,6 +129,7 @@ export function A11yPage() {
 
       <CaseStudySections sections={sections} />
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }

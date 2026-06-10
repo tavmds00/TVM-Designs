@@ -37,7 +37,7 @@ export const kruiCaseStudy: CaseStudyContent = {
       },
     ],
     meta: [
-      { label: "My Role", value: "Design Practice Lead \nDesign Operations" },
+      { label: "My Role", value: "Design Practice Lead \nOrganizational Alignment" },
       { label: "Timeline", value: "Sept 22-Feb 23" },
     ],
     tools: ["Figma", "Git", "Enterprise UX", "Parabol", "C Suite Alignment"],

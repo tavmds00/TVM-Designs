@@ -23,7 +23,7 @@ export const mycareerCaseStudy: CaseStudyContent = {
     aboutHeading: "About",
     aboutParagraphs: [
       { text: "I transformed a chaotic, high-volume, wait-in-line career event into a scheduled, data-informed experience.The outcomes created more meaningful conversations for marines and their career advisors. This system now supports thousands of people across multiple sites and at least 12,000+ interviews completed across 15+ events to date.", bold: false },
-      { text: "64 days from kickoff to software in production. 178 days to full user adoption.  75% increase in turnout across West Coast events (3,205 vs 1,832) \n81% increase in interviews completed (2,385 vs 1,316).", bold: false },
+      { text: "64 days from kickoff to software in production. 178 days to full user adoption. \n 75% increase in turnout across West Coast events (3,205 vs 1,832) \n81% increase in interviews completed (2,385 vs 1,316).", bold: false },
     ],
     meta: [
       { label: "My Role", value: "Founding Product Designer\n0-1 Application" },

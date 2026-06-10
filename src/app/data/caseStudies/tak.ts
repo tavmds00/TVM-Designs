@@ -23,7 +23,7 @@ export const takCaseStudy: CaseStudyContent = {
       { text: "The challenge was everything that came after.", bold: false },
     ],
     meta: [
-      { label: "Platform", value: "WinTAK (Windows / WPF)\nATAK (Android / Material Design)" },
+      { label: "My Role", value: "Design Lead\nShared Component Framework" },
       { label: "Timeline", value: "April – June 2024" },
     ],
     tools: ["Design System", "Governance", "Figma"],

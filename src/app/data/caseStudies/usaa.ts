@@ -44,7 +44,7 @@ export const usaaCaseStudy: CaseStudyContent = {
       },
     ],
     meta: [
-      { label: "My Role", value: "Director of UX & Product Design\nRe-Design" },
+      { label: "My Role", value: "Director of UX & Product Design\nExperience Strategy" },
       { label: "Timeline", value: "Aug '18 – April '19" },
     ],
     tools: ["Sketch", "Prototyping", "UX Research", "Q/A", "WCAG Compliance"],

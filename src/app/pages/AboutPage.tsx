@@ -14,9 +14,9 @@ export function AboutPage() {
               <div>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8">About Me:</h1>
                 <div className="space-y-4 text-base sm:text-lg text-neutral-300 leading-relaxed">
-                  <p>12+ years leading design for high-stakes, mission critical products. I've built and mentored design teams, defined processes, and shipped under strict operational constraints from military bases to government infrastructure. I bridge strategy and execution, aligning cross-functional teams around user needs that matter.</p>
-                  <p>Discovery never stops, users always come first, and every decision is backed by data.</p>
-                  <p>Based in Austin, Texas.</p>
+                  <p> For more than 12 years, I've led design for high stakes products where reliability, usability, and operational outcomes matter. I've built and mentored design teams, established design practices, developed design systems, and partnered with product and engineering leaders to deliver software across government, enterprise fintech, SaaS, and startup environments.</p>
+                  <p>My work sits between strategy and execution. I help organizations determine what to build, align teams around a shared vision, and create the systems that enable products to scale.</p>
+                  <p>Whether launching a new product, modernizing an existing platform, or growing a design practice, I'm most interested in solving complex problems that require collaboration, clarity, and long-term thinking.</p>
                 </div>
               </div>
               <div>

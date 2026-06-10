@@ -17,7 +17,7 @@ export const a11yCaseStudy: CaseStudyContent = {
       { text: "Years later, that perspective would evolve into organizational accessibility leadership across enterprise environments including USAA and VMware Tanzu Labs, where I helped establish accessibility as a visible and scalable design practice through education, advocacy, and cross-functional collaboration.", bold: false },
     ],
     meta: [
-      { label: "Platform", value: "A11Y, WCAG Compliance" },
+      { label: "My Role", value: "Accessibility Lead \nPractice Development" },
       { label: "Timeline", value: "April 21 – June 2023" },
     ],
     tools: ["Accessibility Leadership", "WCAG Training", "Leadership & Advocacy", "Org Adoption", "Cross Functional Collaboration"],

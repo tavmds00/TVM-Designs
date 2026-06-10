@@ -28,7 +28,7 @@ export const wavCaseStudy: CaseStudyContent = {
       },
     ],
     meta: [
-      { label: "Role", value: "Director Product Design\nCreative Director" },
+      { label: "My Role", value: "Creative Director\nTeam Leadership & Product Vision" },
       { label: "Timeline", value: "2015–2017" },
     ],
     ctas: [

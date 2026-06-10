@@ -188,7 +188,7 @@ export const kruiCaseStudy: CaseStudyContent = {
       id: "krui-section-12",
       type: "quote",
       quoteLClass: "mt-2",
-      quoteRClass: "self-start mt-20",
+      quoteRClass: "self-start mt-18",
       paddingY: "pt-12 pb-12",
       quoteColor: "#00B4D8",
       quote: "It would be helpful if we had a way to see the \n decisions and research behind the guidance.",

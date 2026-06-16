@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import type { Project } from "../data/projects";
 import { getProjectHref, projectMediaFontStyle } from "../data/projects";
@@ -55,6 +56,7 @@ function MediaArea({ project }: { project: Project }) {
 export function ProjectCard({ project }: ProjectCardProps) {
   const href = getProjectHref(project);
   const descriptionColor = project.slug === "itemeyes" ? "text-white" : "text-[#d4d4d8]";
+  const [tapped, setTapped] = useState(false);
 
   const card = (
     <div className="group/card relative h-full w-full">
@@ -74,8 +76,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
       </article>
 
       <div
-        className="pointer-events-none absolute inset-0 z-10 flex items-start justify-center 
-        bg-black/0 pt-16 opacity-0 transition-all duration-300 group-hover/card:bg-black/85 group-hover/card:opacity-100"
+        className={`pointer-events-none absolute inset-0 z-10 flex items-start justify-center 
+        bg-black/0 pt-16 opacity-0 transition-all duration-300 group-hover/card:bg-black/85 group-hover/card:opacity-100 ${
+          tapped ? "!bg-black/85 !opacity-100" : ""
+        }`}
         aria-hidden
       >
         <div className="flex max-w-[90%] flex-col items-center gap-3 text-center">
@@ -87,7 +91,16 @@ export function ProjectCard({ project }: ProjectCardProps) {
   );
 
   if (!href) {
-    return <div className="block h-full cursor-default">{card}</div>;
+    return (
+      <button
+        type="button"
+        className="block h-full w-full cursor-default text-left"
+        onClick={() => setTapped((t) => !t)}
+        aria-label={`${project.title}: ${project.hoverTitle}`}
+      >
+        {card}
+      </button>
+    );
   }
 
   return (

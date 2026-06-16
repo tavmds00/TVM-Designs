@@ -114,12 +114,12 @@ export function Header() {
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 md:hidden">
           <div
-            className="absolute inset-0 bg-black/95 backdrop-blur-sm"
+            className="absolute inset-0 bg-black"
             onClick={() => setMobileMenuOpen(false)}
           />
 
           <div className="relative h-full flex items-center justify-center">
-            <nav className="flex flex-col items-center space-y-8">
+            <nav className="flex flex-col items-center space-y-6">
               <Link
                 to="/"
                 className="text-3xl font-bold hover:text-white/80 transition-colors duration-300"

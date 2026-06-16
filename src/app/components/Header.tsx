@@ -35,13 +35,13 @@ export function Header() {
     </Link>
   );
 
-  const mobilePrimaryNavLink = onProjectPage ? null : (
+  const mobilePrimaryNavLink = (
     <Link
       to="/portfolio"
-      className="text-2xl font-bold transition-colors duration-300 hover:text-white/80"
+      className="text-3xl font-bold transition-colors duration-300 hover:text-white/80"
       onClick={() => setMobileMenuOpen(false)}
     >
-      {onPortfolio ? "Portfolio" : "Projects"}
+      Projects
     </Link>
   );
 

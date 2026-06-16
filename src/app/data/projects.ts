@@ -109,7 +109,7 @@ export const projects: Project[] = [
     hoverTitle: "Securing USAA's 7 Campuses",
     mediaBgSrc: usaaBg,
     mediaTopLabel: "Securing USAA's 7 Campuses",
-    mediaStat: "35% faster check-in\nacross 7 campuses.",
+    mediaStat: "35% faster check‑in\nacross 7 campuses.",
     logoSrc: usaaLogo,
     screenSrc: usaaScreen,
   },

@@ -44,7 +44,6 @@ export function Header() {
       Projects
     </Link>
   );
-
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-[300] bg-black text-white border-b border-neutral-900">

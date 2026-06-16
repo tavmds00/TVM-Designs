@@ -84,7 +84,7 @@ export const cardLayouts: Record<ProjectSlug, CardLayout> = {
       color: "#ffffff",
     },
     stat: {
-      className: `${dmSansStat} inset-[61.4%_53.71%_6.63%_6.14%] whitespace-pre-line`,
+      className: `${dmSansStat} inset-[61.4%_6.14%_6.63%_6.14%] whitespace-pre-line`,
       color: "#ffd84e",
     },
     logo: {

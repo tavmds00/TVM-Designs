@@ -38,7 +38,7 @@ export function Header() {
   const mobilePrimaryNavLink = onProjectPage ? null : (
     <Link
       to="/portfolio"
-      className="text-3xl font-bold transition-colors duration-300 hover:text-white/80"
+      className="text-2xl font-bold transition-colors duration-300 hover:text-white/80"
       onClick={() => setMobileMenuOpen(false)}
     >
       {onPortfolio ? "Portfolio" : "Projects"}
@@ -112,17 +112,17 @@ export function Header() {
       </header>
 
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 md:hidden">
+        <div className="fixed inset-0 z-[200] md:hidden">
           <div
             className="absolute inset-0 bg-black"
             onClick={() => setMobileMenuOpen(false)}
           />
 
           <div className="relative h-full flex items-center justify-center">
-            <nav className="flex flex-col items-center space-y-6">
+            <nav className="flex flex-col items-center space-y-4">
               <Link
                 to="/"
-                className="text-3xl font-bold hover:text-white/80 transition-colors duration-300"
+                className="text-2xl font-bold hover:text-white/80 transition-colors duration-300"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Home
@@ -130,14 +130,14 @@ export function Header() {
               {mobilePrimaryNavLink}
               <Link
                 to="/about"
-                className="text-3xl font-bold hover:text-white/80 transition-colors duration-300"
+                className="text-2xl font-bold hover:text-white/80 transition-colors duration-300"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 About
               </Link>
               <Link
                 to="/contact"
-                className="text-3xl font-bold hover:text-white/80 transition-colors duration-300"
+                className="text-2xl font-bold hover:text-white/80 transition-colors duration-300"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Contact

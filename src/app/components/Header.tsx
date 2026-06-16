@@ -38,7 +38,7 @@ export function Header() {
   const mobilePrimaryNavLink = (
     <Link
       to="/portfolio"
-      className="text-3xl font-bold transition-colors duration-300 hover:text-white/80"
+      className="text-2xl font-bold transition-colors duration-300 hover:text-white/80"
       onClick={() => setMobileMenuOpen(false)}
     >
       Projects

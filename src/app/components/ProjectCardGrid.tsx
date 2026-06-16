@@ -11,7 +11,7 @@ export function ProjectCardGrid({ projects }: ProjectCardGridProps) {
       {projects.map((project) => (
         <div
           key={project.slug}
-          className="group/item relative transition-opacity duration-300 pointer-events-auto group-hover/container:opacity-20 hover:!opacity-100"
+          className="group/item relative transition-opacity duration-300 pointer-events-auto group-hover/container:opacity-20 hover:!opacity-100 @container"
         >
           <div className="pointer-events-none fixed inset-0 z-40 bg-black opacity-0 transition-opacity duration-300 group-hover/item:opacity-[0.99]" />
           <div className="relative z-50">

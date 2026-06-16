@@ -12,7 +12,7 @@ function MediaArea({ project }: { project: Project }) {
   const { mediaBgSrc, mediaTopLabel, mediaStat, logoSrc, screenSrc, mockupSrc } = project;
 
   return (
-    <div className="relative h-[244px] shrink-0 overflow-hidden bg-[#262626] shadow-[0px_4px_2px_rgba(0,0,0,0.25)]">
+    <div className="relative w-full aspect-[391/244] shrink-0 overflow-hidden bg-[#262626] shadow-[0px_4px_2px_rgba(0,0,0,0.25)]">
       <div className="relative size-full">
         <img
           src={mediaBgSrc}
@@ -58,7 +58,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   const card = (
     <div className="group/card relative h-full w-full">
-      <article className="flex h-full w-full max-w-[391px] flex-col overflow-hidden bg-[#171717]">
+      <article className="flex h-full w-full flex-col overflow-hidden bg-[#171717]">
         <MediaArea project={project} />
 
         <div className="flex flex-col gap-2 px-6 pb-6 pt-6">

@@ -20,10 +20,10 @@ export type CardLayout = {
   mockup?: ImageLayer;
 };
 
-// Font sizes use vw-relative clamp so they scale with the card instead of
-// staying fixed px when the card is wider/narrower than the original 391px design.
-const dmSansTop = "absolute font-semibold leading-normal text-[clamp(0.875rem,4.2cqw,1.25rem)]";
-const dmSansStat = "absolute font-semibold leading-normal text-[clamp(0.75rem,3.4cqw,1rem)]";
+// Font sizes scale with card width on mobile/tablet (cqw), but lock to the
+// original fixed px size on desktop (lg:) where they were too small before.
+const dmSansTop = "absolute font-semibold leading-normal text-[clamp(0.875rem,4.2cqw,1.25rem)] lg:text-[20px]";
+const dmSansStat = "absolute font-semibold leading-normal text-[clamp(0.75rem,3.4cqw,1rem)] lg:text-[16px]";
 
 /**
  * Figma node 3780:2823 — per-card media layer positions.

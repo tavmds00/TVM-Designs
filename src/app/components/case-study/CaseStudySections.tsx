@@ -214,7 +214,7 @@ function ResultCards({ section }: { section: CaseStudyResultCardsSection }) {
           </div>
         ))}
       </div>
-      <div className="w-screen lg:w-[45%] shrink-0 -mx-8 sm:-mx-12 lg:mx-0">
+      <div className="w-screen lg:w-[45%] h-[400px] lg:h-auto shrink-0 -mx-8 sm:-mx-12 lg:mx-0">
         <img src={section.image} alt={section.imageAlt ?? ""} className="h-full w-full object-cover" />
       </div>
     </div>

@@ -36,7 +36,7 @@ export const cardLayouts: Record<ProjectSlug, CardLayout> = {
   itemeyes: {
     logo: { className: "absolute inset-[10.66%_48.59%_74.18%_8.44%]" },
     topLabel: {
-      className: `${dmSansTop} inset-[29.51%_49.87%_38.52%_8.7%]`,
+      className: `${dmSansTop} inset-[29.51%_49.87%_38.52%_8.7%] whitespace-pre-line`,
       color: "#ffffff",
     },
     stat: {
@@ -49,11 +49,11 @@ export const cardLayouts: Record<ProjectSlug, CardLayout> = {
   },
   mycareer: {
     topLabel: {
-      className: `${dmSansTop} inset-[6.56%_12.28%_84.02%_9.72%] whitespace-pre-wrap`,
+      className: `${dmSansTop} inset-[6.56%_12.28%_84.02%_9.72%]`,
       color: "#ffffff",
     },
     stat: {
-      className: `${dmSansStat} inset-[19.67%_31.2%_48.36%_9.72%]`,
+      className: `${dmSansStat} inset-[19.67%_31.2%_48.36%_9.72%] whitespace-pre-wrap`,
       color: "#ffd84e",
     },
     logo: { className: "absolute inset-[19.67%_17.9%_65.16%_69.57%] overflow-hidden" },
@@ -80,7 +80,7 @@ export const cardLayouts: Record<ProjectSlug, CardLayout> = {
   },
   usaa: {
     topLabel: {
-      className: `${dmSansTop} inset-[37.22%_50.38%_41.47%_6.14%] leading-normal`,
+      className: `${dmSansTop} inset-[37.22%_50.38%_41.47%_6.14%] leading-normal whitespace-pre-line`,
       color: "#ffffff",
     },
     stat: {

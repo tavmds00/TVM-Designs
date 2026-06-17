@@ -189,7 +189,7 @@ function TwoColumnList({ section }: { section: CaseStudyTwoColumnListSection }) 
 function ResultCards({ section }: { section: CaseStudyResultCardsSection }) {
   const accent = section.accentColor ?? "#00e5ff";
   return (
-    <div className="flex min-h-[600px] bg-[#0a0a0a]">
+    <div className="flex flex-col lg:flex-row min-h-[600px] bg-[#0a0a0a]">
       <div className="flex flex-1 flex-col justify-center gap-5 px-8 py-20 sm:px-12 lg:px-16">
         {section.heading && (
           <h2 className="max-w-full leading-tight whitespace-pre-line" style={ts(section.headingStyle, S.heading)}>
@@ -214,7 +214,7 @@ function ResultCards({ section }: { section: CaseStudyResultCardsSection }) {
           </div>
         ))}
       </div>
-      <div className="w-[45%] shrink-0">
+      <div className="w-screen lg:w-[45%] shrink-0 -mx-8 sm:-mx-12 lg:mx-0">
         <img src={section.image} alt={section.imageAlt ?? ""} className="h-full w-full object-cover" />
       </div>
     </div>

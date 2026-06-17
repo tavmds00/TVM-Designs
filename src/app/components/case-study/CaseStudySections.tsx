@@ -190,7 +190,7 @@ function ResultCards({ section }: { section: CaseStudyResultCardsSection }) {
   const accent = section.accentColor ?? "#00e5ff";
   return (
     <div className="flex flex-col lg:flex-row min-h-[600px] bg-black">
-      <div className="flex flex-1 flex-col justify-center gap-5 px-8 py-20 sm:px-12 lg:px-16 bg-[#0a0a0a]">
+      <div className="flex flex-1 flex-col justify-center gap-5 px-8 py-20 sm:px-12 lg:px-16 bg-black">
         {section.heading && (
           <h2 className="max-w-full leading-tight whitespace-pre-line" style={ts(section.headingStyle, S.heading)}>
             {section.heading}

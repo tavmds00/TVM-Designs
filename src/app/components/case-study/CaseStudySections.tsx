@@ -291,7 +291,7 @@ export function CaseStudySections({ sections }: CaseStudySectionsProps) {
                       )}
                     </div>
                   </div>
-                                      <div className={`${section.mediaSide === "left" ? "order-first" : "order-2"} min-w-0`}>
+                                      <div className={`${section.mediaSide === "left" ? "order-first" : "order-2"}`}>
                     {section.videoRight ? (
                       <video src={section.videoRight.src} autoPlay loop muted playsInline className="block h-full w-full object-contain" />
                     ) : section.media.kind === "mp4" ? (

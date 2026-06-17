@@ -40,7 +40,7 @@ export const cardLayouts: Record<ProjectSlug, CardLayout> = {
       color: "#ffffff",
     },
     stat: {
-      className: `${dmSansStat} inset-[66.8%_44.25%_1.23%_8.7%] whitespace-pre-line`,
+      className: `${dmSansStat} inset-[70%_44.25%_1.23%_8.7%] whitespace-pre-line`,
       color: "#ffc700",
     },
     mockup: {
@@ -63,7 +63,7 @@ export const cardLayouts: Record<ProjectSlug, CardLayout> = {
   },
   krui: {
     topLabel: {
-      className: `${dmSansTop} left-[7.9%] top-[8.6%] max-w-[68.3%]`,
+      className: `${dmSansTop} left-[7.9%] top-[7%] max-w-[68.3%]`,
       color: "#ffffff",
     },
     stat: {
@@ -71,7 +71,7 @@ export const cardLayouts: Record<ProjectSlug, CardLayout> = {
       color: "#00ff1e",
     },
     logo: {
-      className: "absolute left-[78%] top-[1.6%] h-[29.9%] w-[17.4%] object-contain object-right",
+      className: "absolute left-[78%] top-[1.6%] h-[35%] w-[17.4%] object-contain object-right",
     },
     screen: {
       className:
@@ -84,7 +84,7 @@ export const cardLayouts: Record<ProjectSlug, CardLayout> = {
       color: "#ffffff",
     },
     stat: {
-      className: `${dmSansStat} inset-[61.4%_6.14%_6.63%_6.14%] whitespace-pre-line`,
+      className: `${dmSansStat} inset-[70%_6.14%_6.63%_6.14%] whitespace-pre-line`,
       color: "#ffd84e",
     },
     logo: {
@@ -113,7 +113,7 @@ export const cardLayouts: Record<ProjectSlug, CardLayout> = {
   },
   a11y: {
     topLabel: {
-      className: `${dmSansTop} inset-[13.11%_33.15%_65.57%_6.14%]`,
+      className: `${dmSansTop} inset-[10%_33.15%_65.57%_6.14%]`,
       color: "#000000",
     },
     stat: {

@@ -23,7 +23,10 @@ function ts(style?: TextStyle, defaults?: { fontSize?: string; color?: string; f
   };
 }
 
-function FullBleedMedia({ src, alt }: { src: string; alt: string }) {
+function FullBleedMedia({ src, alt, kind }: { src: string; alt: string; kind?: string }) {
+  if (kind === "mp4") {
+    return <video src={src} autoPlay loop muted playsInline className="block h-auto w-full object-contain" />;
+  }
   return <img src={src} alt={alt} className="block h-auto w-full object-contain" loading="lazy" />;
 }
 
@@ -211,7 +214,7 @@ function ResultCards({ section }: { section: CaseStudyResultCardsSection }) {
           </div>
         ))}
       </div>
-      <div className="w-full lg:w-[45%] shrink-0">
+      <div className="w-screen lg:w-[45%] shrink-0 -mx-8 sm:-mx-12 lg:mx-0">
         <img src={section.image} alt={section.imageAlt ?? ""} className="h-full w-full object-cover" />
       </div>
     </div>
@@ -229,7 +232,7 @@ export function CaseStudySections({ sections }: CaseStudySectionsProps) {
           case "fullBleed":
             return (
               <section key={section.id} id={section.id} className="w-full">
-                <FullBleedMedia src={section.media.src} alt={section.media.alt} />
+                <FullBleedMedia src={section.media.src} alt={section.media.alt} kind={section.media.kind} />
               </section>
             );
 
@@ -291,6 +294,8 @@ export function CaseStudySections({ sections }: CaseStudySectionsProps) {
                                       <div className={`${section.mediaSide === "left" ? "order-first" : "order-2"} min-w-0 overflow-hidden`}>
                     {section.videoRight ? (
                       <video src={section.videoRight.src} autoPlay loop muted playsInline className="block h-full w-full object-contain" />
+                    ) : section.media.kind === "mp4" ? (
+                      <video src={section.media.src} autoPlay loop muted playsInline className="block h-full w-full object-contain" />
                     ) : (
                       <img src={section.media.src} alt={section.media.alt} className="block h-full w-full object-contain" loading="lazy" />
                     )}

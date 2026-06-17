@@ -13,6 +13,8 @@ type CaseStudySectionsProps = {
   sections: CaseStudySection[];
 };
 
+// ts() lets the data file override a token — if no override, token wins
+// style.size maps to fontSize so data files can override size without hardcoding
 function ts(style?: TextStyle, defaults?: { fontSize?: string; color?: string; fontWeight?: string }) {
   return {
     fontSize:   style?.size ?? defaults?.fontSize,
@@ -21,19 +23,7 @@ function ts(style?: TextStyle, defaults?: { fontSize?: string; color?: string; f
   };
 }
 
-function FullBleedMedia({ src, alt, kind, constrained }: { src: string; alt: string; kind: string; constrained?: boolean }) {
-  if (kind === "mp4") {
-    return (
-      <video src={src} autoPlay loop muted playsInline className="block h-auto w-full object-contain" />
-    );
-  }
-  if (constrained) {
-    return (
-      <div className="w-full flex justify-center items-center overflow-hidden" style={{ maxHeight: "70vh" }}>
-        <img src={src} alt={alt} className="w-full h-full object-contain" style={{ maxHeight: "70vh" }} loading="lazy" />
-      </div>
-    );
-  }
+function FullBleedMedia({ src, alt }: { src: string; alt: string }) {
   return <img src={src} alt={alt} className="block h-auto w-full object-contain" loading="lazy" />;
 }
 
@@ -147,11 +137,6 @@ function StepFlow({ section }: { section: CaseStudyStepFlowSection }) {
             </>
           );
         })}
-        {section.image && (
-          <div className="flex items-center justify-center shrink-0 pl-6">
-            <img src={section.image} alt={section.imageAlt ?? ""} className="h-auto w-40 object-contain" />
-          </div>
-        )}
       </div>
     </section>
   );
@@ -222,7 +207,7 @@ function ResultCards({ section }: { section: CaseStudyResultCardsSection }) {
               <span style={ts(section.categoryStyle, { fontSize: "0.75rem", color: "#a3a3a3", fontWeight: "600" })}>{card.category}</span>
             </div>
             <p className="mb-1" style={ts(section.metricStyle, { fontSize: "1.25rem", color: "#ffffff", fontWeight: "700" })}>{card.metric}</p>
-            <p className="mt-4" style={ts(section.descriptionStyle, S.body)}>{card.description}</p>
+            <p style={ts(section.descriptionStyle, S.body)}>{card.description}</p>
           </div>
         ))}
       </div>
@@ -234,6 +219,7 @@ function ResultCards({ section }: { section: CaseStudyResultCardsSection }) {
 }
 
 
+
 export function CaseStudySections({ sections }: CaseStudySectionsProps) {
   return (
     <div className="flex w-full flex-col">
@@ -243,84 +229,76 @@ export function CaseStudySections({ sections }: CaseStudySectionsProps) {
           case "fullBleed":
             return (
               <section key={section.id} id={section.id} className="w-full">
-                <FullBleedMedia
-                  src={section.media.src}
-                  alt={section.media.alt}
-                  kind={section.media.kind}
-                  constrained={section.id === "tak-section-4"}
-                />
+                <FullBleedMedia src={section.media.src} alt={section.media.alt} />
               </section>
             );
 
-            case "split": {
-              const bulletDotColor = section.bulletStyle?.color ?? "#ffffff";
-              const allCtas = section.ctas ?? (section.cta ? [section.cta] : []);
-              return (
-                <section key={section.id} id={section.id} className="w-full">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                    <div className={`${section.mediaSide === "left" ? "order-2" : "order-first"} flex items-center px-8 sm:px-12 lg:px-16 py-10 lg:py-16`}>
-                      <div className="space-y-6">
-                        <h2 className="leading-[1.15] tracking-[-0.02em]" style={ts(section.headingStyle, S.heading)}>
-                          {section.heading}
-                        </h2>
-                        <div className="space-y-4">
-                          {section.paragraphs.map((p, idx) => {
-                            const text = typeof p === "string" ? p : p.text;
-                            const bold = typeof p === "object" && p.bold;
-                            return (
-                              <p key={idx} className="whitespace-pre-line" style={bold ? S.aboutBold : ts(section.paragraphStyle, S.body)}>
-                                {text}
-                              </p>
-                            );
-                          })}
-                          {section.bullets && (
-                            <ul className="space-y-3">
-                              {section.bullets.map((b, bi) => {
-                                const text = typeof b === "string" ? b : b.text;
-                                const bold = typeof b === "object" && b.bold;
-                                return (
-                                  <li key={bi} className="flex gap-2">
-                                    <span className="mt-1 text-xl shrink-0" style={{ color: bulletDotColor }}>•</span>
-                                    <span style={bold ? S.aboutBold : S.bullet}>{text}</span>
-                                  </li>
-                                );
-                              })}
-                            </ul>
-                          )}
-                        </div>
-                        {allCtas.length > 0 && (
-                          <div className="flex flex-wrap gap-3">
-                            {allCtas.map((cta) => (
-                              <CtaButton key={cta.label} {...cta} />
-                            ))}
-                          </div>
-                        )}
-                        {section.audio && (
-                          <div className="pt-4">
-                            {section.audio.label && <p style={{ ...S.body, fontWeight: "600", color: "#ffffff" }} className="mb-1">{section.audio.label}</p>}
-                            {section.audio.sublabel && <p style={{ ...S.body, color: "#a3a3a3" }} className="mb-3">{section.audio.sublabel}</p>}
-                            <audio controls className="w-full" style={{ accentColor: section.audio.accentColor ?? "#C584FF" }}>
-                              <source src={section.audio.src} type="audio/mp4" />
-                            </audio>
-                          </div>
+          case "split": {
+            const bulletDotColor = section.bulletStyle?.color ?? "#ffffff";
+            // Normalise: if only the legacy `cta` field is set, wrap it so we render one path
+            const allCtas = section.ctas ?? (section.cta ? [section.cta] : []);
+            return (
+              <section key={section.id} id={section.id} className="w-full">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  <div className={`${section.mediaSide === "left" ? "order-2" : "order-first"} flex items-center px-8 sm:px-12 lg:px-16 py-10 lg:py-16`}>
+                    <div className="space-y-6">
+                      <h2 className="leading-[1.15] tracking-[-0.02em]" style={ts(section.headingStyle, S.heading)}>
+                        {section.heading}
+                      </h2>
+                      <div className="space-y-4">
+                        {section.paragraphs.map((p, idx) => {
+                          const text = typeof p === "string" ? p : p.text;
+                          const bold = typeof p === "object" && p.bold;
+                          return (
+                            <p key={idx} className="whitespace-pre-line" style={bold ? S.aboutBold : ts(section.paragraphStyle, S.body)}>
+                              {text}
+                            </p>
+                          );
+                        })}
+                        {section.bullets && (
+                          <ul className="space-y-3">
+                            {section.bullets.map((b, bi) => {
+                              const text = typeof b === "string" ? b : b.text;
+                              const bold = typeof b === "object" && b.bold;
+                              return (
+                                <li key={bi} className="flex gap-2">
+                                  <span className="mt-1 text-xl shrink-0" style={{ color: bulletDotColor }}>•</span>
+                                  <span style={bold ? S.aboutBold : S.bullet}>{text}</span>
+                                </li>
+                              );
+                            })}
+                          </ul>
                         )}
                       </div>
-                    </div>
-                    <div className={`${section.mediaSide === "left" ? "order-first" : "order-2"} overflow-hidden`}>
-                      {section.videoRight ? (
-                        <video src={section.videoRight.src} autoPlay loop muted playsInline className="block h-full w-full object-contain" />
-                      ) : section.media.kind === "mp4" ? (
-                        <div className={section.id === "wav-section-4" ? "flex items-center justify-center h-full w-full p-16" : "h-full w-full"}>
-                          <video src={section.media.src} autoPlay loop muted playsInline className="block w-full h-auto object-contain" />
+                      {allCtas.length > 0 && (
+                        <div className="flex flex-wrap gap-3">
+                          {allCtas.map((cta) => (
+                            <CtaButton key={cta.label} {...cta} />
+                          ))}
                         </div>
-                      ) : (
-                        <img src={section.media.src} alt={section.media.alt} className={`block h-full w-full object-contain ${section.id === "wav-section-4" ? "scale-[.8] origin-center" : ""}`} loading="lazy" />
+                      )}
+                      {section.audio && (
+                        <div className="pt-4">
+                          {section.audio.label && <p style={{ ...S.body, fontWeight: "600", color: "#ffffff" }} className="mb-1">{section.audio.label}</p>}
+                          {section.audio.sublabel && <p style={{ ...S.body, color: "#a3a3a3" }} className="mb-3">{section.audio.sublabel}</p>}
+                          <audio controls className="w-full" style={{ accentColor: section.audio.accentColor ?? "#C584FF" }}>
+                            <source src={section.audio.src} type="audio/mp4" />
+                          </audio>
+                        </div>
                       )}
                     </div>
                   </div>
-                </section>
-              );
-            }
+                                      <div className={`${section.mediaSide === "left" ? "order-first" : "order-2"} min-w-0 overflow-hidden`}>
+                    {section.videoRight ? (
+                      <video src={section.videoRight.src} autoPlay loop muted playsInline className="block h-full w-full object-contain" />
+                    ) : (
+                      <img src={section.media.src} alt={section.media.alt} className="block h-full w-full object-contain" loading="lazy" />
+                    )}
+                  </div>
+                </div>
+              </section>
+            );
+          }
 
           case "dualImage":
             return (
@@ -383,7 +361,7 @@ export function CaseStudySections({ sections }: CaseStudySectionsProps) {
           case "textBlock": {
             const bulletDotColor = section.bulletColor ?? "#ffffff";
             return (
-              <section key={section.id} id={section.id} className="w-full px-8 sm:px-12 lg:px-16 pt-16 sm:pt-20 lg:pt-24 pb-8">
+              <section key={section.id} id={section.id} className="w-full px-8 sm:px-12 lg:px-16 py-16 sm:py-20 lg:py-28">
                 <div className="max-w-[90rem]">
                   <h2 className="mb-6 leading-[1.15] tracking-[-0.02em]" style={ts(section.headingStyle, S.heading)}>
                     {section.heading}
@@ -458,10 +436,10 @@ export function CaseStudySections({ sections }: CaseStudySectionsProps) {
                     </svg>
                     <p className="whitespace-pre-line italic" style={ts(section.quoteStyle, { fontSize: "2.4rem", color: "#ffffff", fontWeight: "300" })}>
                       {section.quote}
-                      <svg width="44" height="36" viewBox="0 0 44 36" fill="none" xmlns="http://www.w3.org/2000/svg" className="inline-block w-8 ml-2 align-middle">
-                        <path opacity={0.5} d="M31.1041 35.1367C38.4481 29.9527 43.6321 21.4567 43.6321 12.0967C43.6321 4.46472 39.0241 0.00071676 33.6961 0.000716294C28.6561 0.000715854 24.9121 4.03271 24.9121 8.78471C24.9121 13.5367 28.2241 16.9927 32.5441 16.9927C33.4081 16.9927 34.5601 16.8487 34.8481 16.7047C34.1281 21.6007 29.5201 27.3607 24.9121 30.2407L31.1041 35.1367ZM6.33608 35.1367C13.5361 29.9527 18.7201 21.4567 18.7201 12.0967C18.7201 4.46471 14.1121 0.000714582 8.78408 0.000714117C3.88808 0.000713689 8.28278e-05 4.03271 8.24124e-05 8.78471C8.1997e-05 13.5367 3.45608 16.9927 7.77608 16.9927C8.64008 16.9927 9.64808 16.8487 9.93608 16.7047C9.21608 21.6007 4.75208 27.3607 0.144082 30.2407L6.33608 35.1367Z" fill={section.quoteColor ?? "#ffffff"} />
-                      </svg>
                     </p>
+                    <svg width="44" height="36" viewBox="0 0 44 36" fill="none" xmlns="http://www.w3.org/2000/svg" className={`shrink-0 w-8 self-end mb-2 ${section.quoteRClass ?? ""}`}>
+                      <path opacity={0.5} d="M31.1041 35.1367C38.4481 29.9527 43.6321 21.4567 43.6321 12.0967C43.6321 4.46472 39.0241 0.00071676 33.6961 0.000716294C28.6561 0.000715854 24.9121 4.03271 24.9121 8.78471C24.9121 13.5367 28.2241 16.9927 32.5441 16.9927C33.4081 16.9927 34.5601 16.8487 34.8481 16.7047C34.1281 21.6007 29.5201 27.3607 24.9121 30.2407L31.1041 35.1367ZM6.33608 35.1367C13.5361 29.9527 18.7201 21.4567 18.7201 12.0967C18.7201 4.46471 14.1121 0.000714582 8.78408 0.000714117C3.88808 0.000713689 8.28278e-05 4.03271 8.24124e-05 8.78471C8.1997e-05 13.5367 3.45608 16.9927 7.77608 16.9927C8.64008 16.9927 9.64808 16.8487 9.93608 16.7047C9.21608 21.6007 4.75208 27.3607 0.144082 30.2407L6.33608 35.1367Z" fill={section.quoteColor ?? "#ffffff"} />
+                    </svg>
                   </div>
                   <p className={`italic ${section.attributionIndent ?? "pl-10"}`} style={ts(section.attributionStyle, { fontSize: "1.5rem", color: "#a3a3a3", fontWeight: "400" })}>
                     — {section.attribution}
@@ -555,6 +533,7 @@ export function CaseStudySections({ sections }: CaseStudySectionsProps) {
           case "gifOverlay": {
             return (
               <section key={section.id} id={section.id} className="w-full">
+                {/* Copy block above */}
                 <div className="px-8 sm:px-12 lg:px-16 py-10 lg:py-16 bg-black">
                   <div className="space-y-6 max-w-[52rem]">
                     {section.overlaySvg && (
@@ -576,6 +555,7 @@ export function CaseStudySections({ sections }: CaseStudySectionsProps) {
                     </div>
                   </div>
                 </div>
+                {/* GIF below — 550px tall, full page width, no stretch */}
                 <div className="w-full overflow-hidden" style={{ height: "550px" }}>
                   <img
                     src={section.gif.src}

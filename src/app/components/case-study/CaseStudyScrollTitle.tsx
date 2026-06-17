@@ -47,7 +47,7 @@ export function CaseStudyScrollTitle({ title, color = "#0095FF" }: CaseStudyScro
         }}
       >
         <p
-          className="m-0 whitespace-nowrap text-[28vw] font-bold italic leading-[1.3] tracking-tight sm:text-[14vw] lg:text-[11vw]"
+          className="m-0 whitespace-nowrap text-[22vw] font-bold italic leading-[1.3] tracking-tight sm:text-[14vw] lg:text-[11vw]"
           style={{ color }}
           aria-label={title}
         >

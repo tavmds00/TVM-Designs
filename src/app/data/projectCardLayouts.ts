@@ -22,8 +22,8 @@ export type CardLayout = {
 
 // Font sizes scale with card width on mobile/tablet (cqw), but lock to the
 // original fixed px size on desktop (lg:) where they were too small before.
-const dmSansTop = "absolute font-semibold leading-normal text-[clamp(0.875rem,4.2cqw,1.25rem)] lg:text-[20px]";
-const dmSansStat = "absolute font-semibold leading-normal text-[clamp(0.75rem,3.4cqw,1rem)] lg:text-[16px]";
+const dmSansTop = "absolute font-semibold leading-normal text-[clamp(1.1rem,4.2cqw,1.25rem)] lg:text-[20px]";
+const dmSansStat = "absolute font-semibold leading-normal text-[clamp(.90rem,3.4cqw,1rem)] lg:text-[16px]";
 
 /**
  * Figma node 3780:2823 — per-card media layer positions.
@@ -40,7 +40,7 @@ export const cardLayouts: Record<ProjectSlug, CardLayout> = {
       color: "#ffffff",
     },
     stat: {
-      className: `${dmSansStat} inset-[66.8%_44.25%_1.23%_8.7%]`,
+      className: `${dmSansStat} inset-[66.8%_44.25%_1.23%_8.7%] whitespace-pre-line`,
       color: "#ffc700",
     },
     mockup: {
@@ -67,7 +67,7 @@ export const cardLayouts: Record<ProjectSlug, CardLayout> = {
       color: "#ffffff",
     },
     stat: {
-      className: `${dmSansStat} left-[7.9%] top-[23.4%] max-w-[77.7%]`,
+      className: `${dmSansStat} left-[7.9%] top-[23.4%] max-w-[77.7%] whitespace-pre-line`,
       color: "#00ff1e",
     },
     logo: {
@@ -101,7 +101,7 @@ export const cardLayouts: Record<ProjectSlug, CardLayout> = {
       color: "#ffffff",
     },
     stat: {
-      className: `${dmSansStat} left-[8.2%] top-[24.6%] max-w-[93.9%]`,
+      className: `${dmSansStat} left-[8.2%] top-[24.6%] max-w-[93.9%] whitespace-pre-line`,
       color: "#00ca61",
     },
     logo: {
@@ -117,7 +117,7 @@ export const cardLayouts: Record<ProjectSlug, CardLayout> = {
       color: "#000000",
     },
     stat: {
-      className: `${dmSansStat} inset-[36.48%_45.48%_31.56%_6.14%]`,
+      className: `${dmSansStat} inset-[36.48%_45.48%_31.56%_6.14%] whitespace-pre-line`,
       color: "#660aa4",
     },
     logo: {
@@ -134,7 +134,7 @@ export const cardLayouts: Record<ProjectSlug, CardLayout> = {
       color: "#09090b",
     },
     stat: {
-      className: `${dmSansStat} left-[10.2%] top-[34.4%] max-w-[83.1%]`,
+      className: `${dmSansStat} left-[10.2%] top-[34.4%] max-w-[83.1%] whitespace-pre-line`,
       color: "#fe02ae",
     },
     logo: {

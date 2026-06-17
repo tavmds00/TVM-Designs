@@ -130,7 +130,7 @@ export const cardLayouts: Record<ProjectSlug, CardLayout> = {
   },
   wav: {
     topLabel: {
-      className: `${dmSansTop} left-[39.4%] top-[24%] max-w-[53.7%]`,
+      className: `${dmSansTop} left-[39.4%] top-[20%] max-w-[53.7%]`,
       color: "#09090b",
     },
     stat: {
@@ -138,7 +138,7 @@ export const cardLayouts: Record<ProjectSlug, CardLayout> = {
       color: "#fe02ae",
     },
     logo: {
-      className: "absolute left-[10.2%] top-[8.5%] h-[20.9%] w-[24.8%] object-contain",
+      className: "absolute left-[10.2%] top-[9.4%] h-[20.9%] w-[24.8%] object-contain",
     },
     screen: {
       className:

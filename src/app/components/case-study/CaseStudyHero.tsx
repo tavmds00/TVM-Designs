@@ -9,11 +9,11 @@ export function CaseStudyHero({ hero }: CaseStudyHeroProps) {
   const { subtitle, subtitle2, aboutHeading, aboutParagraphs, meta, tools, ctas, heroImages } = hero;
 
   return (
-    <section>
+    <div>
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-start">
 
         {/* ── Left sticky column ── */}
-        <div className="px-8 sm:px-12 lg:px-16 lg:sticky lg:top-28 lg:self-start pb-16">
+        <div className="px-8 sm:px-12 lg:px-16 lg:sticky lg:top-0 pb-16" style={{ height: "891px" }}>
           <div className="space-y-8">
 
             {/* Title */}
@@ -149,6 +149,6 @@ export function CaseStudyHero({ hero }: CaseStudyHeroProps) {
         </div>
 
       </div>
-    </section>
+    </div>
   );
 }

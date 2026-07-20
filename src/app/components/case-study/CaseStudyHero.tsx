@@ -10,7 +10,7 @@ export function CaseStudyHero({ hero }: CaseStudyHeroProps) {
 
   return (
     <section>
-      <div className="grid grid-cols-1 lg:grid-cols-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-start">
 
         {/* ── Left sticky column ── */}
         <div className="px-8 sm:px-12 lg:px-16 lg:sticky lg:top-28 lg:self-start pb-16">

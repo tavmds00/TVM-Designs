@@ -136,11 +136,11 @@ export const kruiCaseStudy: CaseStudyContent = {
       heading: "Then I got to work",
       subheading: "I created a five-step Design Consistency process and presented it to the CEO, CTO, and directors alongside the data. Then I executed on it while leading my team day to day.",
       steps: [
-        { number: "STEP 1", title: "Pattern selection", description: "Designers+ Design Managers" },
-        { number: "STEP 2", title: "Component audit", description: "Designers+ Engineers" },
+        { number: "STEP 1", title: "Pattern Selection", description: "Designers+ Design Managers" },
+        { number: "STEP 2", title: "Component Audit", description: "Designers+ Engineers" },
         { number: "STEP 3", title: "Standardization", description: "ICs + Managers" },
-        { number: "STEP 4", title: "Guidance definition", description: "Designers + Product Managers" },
-        { number: "STEP 5", title: "Track backlogs", description: "Managers + Deadlines" },
+        { number: "STEP 4", title: "Guidance Definition", description: "Designers + Product Managers" },
+        { number: "STEP 5", title: "Track Backlogs", description: "Managers + Deadlines" },
       ],
     },
     {

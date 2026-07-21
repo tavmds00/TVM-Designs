@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useRef, useState } from "react";
 import type { CaseStudyContent } from "../../types/caseStudy";
 import { S } from "../../styles/tokens";

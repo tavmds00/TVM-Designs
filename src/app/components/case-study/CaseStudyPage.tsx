@@ -17,7 +17,7 @@ export function CaseStudyPage({ content }: CaseStudyPageProps) {
       <Header />
 
       <main className="pt-24 sm:pt-28 lg:pt-32">
-        <div className="px-8 sm:px-12 lg:px-16 ">
+        <div className="px-8 sm:px-12 lg:px-16">
           <CaseStudyBackLink />
         </div>
         <div className="sticky top-24 z-0">

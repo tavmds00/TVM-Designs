@@ -1,34 +1,60 @@
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import type { CaseStudyContent } from "../../types/caseStudy";
 import { S } from "../../styles/tokens";
 
 type CaseStudyHeroProps = { hero: CaseStudyContent["hero"] };
+
+function getPinTop(): number {
+  if (window.matchMedia("(min-width: 1024px)").matches) return 128;
+  if (window.matchMedia("(min-width: 640px)").matches) return 112;
+  return 96;
+}
 
 export function CaseStudyHero({ hero }: CaseStudyHeroProps) {
   const { subtitle, subtitle2, aboutHeading, aboutParagraphs, meta, tools, ctas, heroImages } = hero;
   const wrapRef = useRef<HTMLDivElement | null>(null);
   const leftRef = useRef<HTMLDivElement | null>(null);
   const [pinStyle, setPinStyle] = useState<React.CSSProperties>({});
-  const [slotHeight, setSlotHeight] = useState<number>();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    const wrap = wrapRef.current;
+    const left = leftRef.current;
+    if (!wrap || !left) return;
+
     const update = () => {
-      const wrap = wrapRef.current;
-      const left = leftRef.current;
-      if (!wrap || !left) return;
-      if (window.innerWidth < 1024) { setPinStyle({}); setSlotHeight(undefined); return; }
-      const h = left.getBoundingClientRect().height;
-      const r = wrap.getBoundingClientRect();
-      setSlotHeight(h);
-      if (r.top > 112) setPinStyle({});
-      else if (r.bottom - 112 < h) setPinStyle({ position: "absolute", bottom: 0, left: 0, width: "100%" });
-      else setPinStyle({ position: "fixed", top: 112, left: r.left, width: r.width });
+      if (window.innerWidth < 1024) {
+        setPinStyle({});
+        return;
+      }
+
+      const pinTop = getPinTop();
+      const leftHeight = left.offsetHeight;
+      const { top, bottom, left: x, width } = wrap.getBoundingClientRect();
+
+      if (top > pinTop) {
+        setPinStyle({});
+      } else if (bottom - pinTop <= leftHeight) {
+        setPinStyle({ position: "absolute", bottom: 0, left: 0, right: 0, zIndex: 10 });
+      } else {
+        setPinStyle({ position: "fixed", top: pinTop, left: x, width, zIndex: 10 });
+      }
     };
+
     update();
     window.addEventListener("scroll", update, { passive: true });
     window.addEventListener("resize", update);
-    const id = setInterval(update, 250);
-    return () => { window.removeEventListener("scroll", update); window.removeEventListener("resize", update); clearInterval(id); };
+
+    const ro = new ResizeObserver(update);
+    ro.observe(wrap);
+    ro.observe(left);
+    const rightCol = wrap.parentElement?.lastElementChild;
+    if (rightCol instanceof HTMLElement) ro.observe(rightCol);
+
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+      ro.disconnect();
+    };
   }, []);
 
   const ctaEls = (ctas ?? []).map((cta) => {
@@ -46,7 +72,7 @@ export function CaseStudyHero({ hero }: CaseStudyHeroProps) {
   return (
     <section>
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-start">
-        <div ref={wrapRef} className="lg:relative" style={slotHeight !== undefined ? { height: slotHeight } : undefined}>
+        <div ref={wrapRef} className="lg:self-stretch lg:relative">
           <div ref={leftRef} className="px-8 sm:px-12 lg:px-16 pb-16" style={pinStyle}>
             <div className="space-y-8">
               <div className="space-y-3">
